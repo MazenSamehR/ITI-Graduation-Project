@@ -7,7 +7,6 @@
 
     <div class="d-flex align-items-center gap-3">
       <button
-
         class="btn bg-dark btn-secondary border-0 dropdown-toggle"
         type="button"
         id="orderDropdown"
@@ -55,7 +54,13 @@
     <!-- Product List -->
     @for (game of allGames; track game.id) {
     <div class="col-6 col-md-4 mb-4 d-flex">
-      <div class="card bg-dark text-white border-0 w-100 d-flex flex-column">
+      <div
+        style="
+          border: 1px solid rgba(255, 255, 255, 0.189);
+          background-color: #1c1c1c;
+        "
+        class="card  text-white w-100 d-flex flex-column"
+      >
         <img
           [src]="game.background_image"
           style="height: 200px; object-fit: cover"
@@ -111,10 +116,10 @@
                 </svg>
               </span>
             </div>
-            <h5 class="card-title fw-bold fs-4">
+            <h5 class="card-title my-4 fs-4">
               {{ game.name | uppercase }}
             </h5>
-            <p class="card-text fw-bold fs-5">
+            <p style="font-size: 1rem;" class="card-text">
               Release Date: {{ game.released }}
             </p>
           </div>
