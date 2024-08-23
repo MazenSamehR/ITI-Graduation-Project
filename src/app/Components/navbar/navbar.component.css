@@ -1,0 +1,43 @@
+.navbar-bordered {
+    border: 2px solid #0c0c0c; /* Border around the navbar */
+    border-color: #198754;
+    padding-top: 10px; /* Increase the padding on the top */
+    padding-bottom: 10px; /* Increase the padding on the bottom */
+}
+
+.bg-body-tertiary-mod {
+    --bs-bg-opacity: 1;
+    /* background-color: rgba(var(--bs-tertiary-bg-rgb), var(--bs-bg-opacity)) !important; */
+}
+
+.dropdown-item:hover {
+    color: black !important;
+}
+
+/* Styling the Search Bar */
+.searchBar::placeholder {
+    color: white;
+    opacity: 1; /* Ensure full opacity for the placeholder text */
+}
+
+.searchBar {
+    background-color: #2e2626;
+    color: white;
+}
+
+.searchBar:hover {
+    background-color: white;
+    color: black;
+}
+
+.searchBar:focus {
+    background-color: white;
+    color: black;
+}
+
+.searchBar:hover::placeholder {
+    color: black;
+    opacity: 1; 
+}
+
+/* While HOVERING */
