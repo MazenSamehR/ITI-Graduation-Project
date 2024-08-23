@@ -1,0 +1,29 @@
+.explore-button:hover {
+  background-color: aliceblue;
+  color: black;
+}
+.card {
+  border-radius: 10px;
+}
+
+.card-body h3 {
+  font-size: 1.75rem;
+}
+
+.card-body p {
+  font-size: 1rem;
+}
+
+.card-body ul {
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+
+.btn {
+  width: 100%;
+  font-weight: bold;
+}
+
+.lg {
+  font-family: "Poppins", sans-serif;
+}
