@@ -1,0 +1,15 @@
+/* While Hovering */
+.cardDiv {
+    border: 3px solid rgb(187, 237, 217);;
+    border-radius: 13px;
+    overflow: hidden;
+    transition: transform 0.3s, border-radius 0.3s, border 0.1s;
+    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 7px;
+}
+.cardDiv:hover {
+    border: 7px double rgb(31, 248, 161);
+    border-radius: 30px;
+    transform: scale(1.1); 
+}
