@@ -25,19 +25,4 @@
     color: white;
 }
 
-.searchBar:hover {
-    background-color: white;
-    color: black;
-}
 
-.searchBar:focus {
-    background-color: white;
-    color: black;
-}
-
-.searchBar:hover::placeholder {
-    color: black;
-    opacity: 1; 
-}
-
-/* While HOVERING */
