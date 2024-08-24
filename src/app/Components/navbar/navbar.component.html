@@ -24,8 +24,8 @@
           <a class="nav-link text-white disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li>
       </ul>
-      <form class="d-flex mx-auto w-50" role="search">
-        <input class="form-control me-2 searchBar bg-dark border-0" type="search" placeholder="Search" aria-label="Search">
+      <form class="d-flex mx-auto w-50" (ngSubmit)="onSearch()" role="search">
+        <input class="form-control me-2 searchBar bg-dark border-0" type="search" [(ngModel)]="searchQuery" name="search" placeholder="Search" aria-label="Search">
         <button class="btn bg-dark text-white" type="submit">Search</button>
       </form>
     </div>
