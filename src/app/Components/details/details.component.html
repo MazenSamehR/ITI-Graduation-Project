@@ -1,0 +1,144 @@
+<app-navbar></app-navbar>
+<div class="container-fluid p-5">
+  <div class="row justify-content-around">
+    <div class="col-12 col-lg-5">
+      <h1 class="text-light">{{ game.name }}</h1>
+      <h2 class="text-light">About</h2>
+      <p class="text-light p-2">{{ game.description_raw }}</p>
+      <div class="row justify-content-center my-4 rowPlatform">
+        <h2 class="text-light mb-4">Platforms :</h2>
+        @for (it of game.parent_platforms; track $index) {
+        @if(it.platform.name== 'PC') {
+        <div class="col-3 col-sm-2 my-3 platform">
+          <img [src]="PC" alt="" class="platformImg" />
+          <h4 class="hide">PC</h4>
+        </div>
+        }@else if (it.platform.name == 'PlayStation') {
+        <div class="col-3 col-sm-2 my-3 platform">
+          <img [src]="PlayStation" alt="" class="platformImg" />
+          <h4 class="hide">PlayStation</h4>
+        </div>
+        }@else if (it.platform.name == 'Linux') {
+        <div class="col-3 col-sm-2 my-3 platform">
+          <img [src]="Linux" alt="" class="platformImg" />
+          <h4 class="hide">Linux</h4>
+        </div>
+        }@else if (it.platform.name =='iOS') {
+        <div class="col-3 col-sm-2 my-3 platform">
+          <img [src]="IOS" alt="" class="platformImg" />
+          <h4 class="hide">ios</h4>
+        </div>
+        }@else if (it.platform.name == 'Nintendo') {
+        <div class="col-3 col-sm-2 my-3 platform">
+          <img [src]="Nintendo" alt="" class="platformImg" />
+          <h4 class="hide">Nintendo</h4>
+        </div>
+        }@else if(it.platform.name == 'Android') {
+        <div class="col-3 col-sm-2 my-3 platform">
+          <img [src]="Android" alt="" class="platformImg" />
+          <h4 class="hide">Android</h4>
+        </div>
+        }@else if (it.platform.name == 'Xbox'){
+        <div class="col-3 col-sm-2 my-3 platform">
+          <img [src]="Xbox" alt="" class="platformImg" />
+          <h4 class="hide">Xbox</h4>
+        </div>
+        } @else if(it.platform.name == 'Web'){
+        <div class="col-3 col-sm-2 my-3 platform">
+          <img [src]="Web" alt="" class="platformImg" />
+          <h4 class="hide">Web</h4>
+        </div>
+        } @else if(it.platform.name == "Apple Macintosh"){
+        <div class="col-3 col-sm-2 my-3 platform">
+          <img [src]="AppleMachine" alt="" class="platformImg" />
+          <h4 class="hide">Macintosh</h4>
+        </div>
+        }}
+      </div>
+      <div class="info row mt-5">
+        <div class="col">
+          <h4 class="text-light mt-4">Release date :</h4>
+          <h5 class="text-light mx-3 mb-3">{{ game.released }}</h5>
+          @if (game.publishers.length > 0) {
+          <h4 class="text-light mt-4">Publisher :</h4>
+          @for (publisher of game.publishers; track $index) {
+          <h5 class="text-light mx-3 mb-3">{{ publisher.name }}</h5>
+          } }
+        </div>
+        <div class="col">
+          @if (game.publishers.length > 0) {
+          <h4 class="text-light mt-4">Genre :</h4>
+          <h5 class="text-light mx-3 mb-3">
+            {{ game.genres[0].name }}
+          </h5>
+          } @if (game.developers.length > 0) {
+          <h4 class="text-light mt-4">Developer :</h4>
+          @for (developer of game.developers; track $index) {
+          <h5 class="text-light mx-3 mb-3">{{ developer.name }}</h5>
+          } }
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-lg-5">
+      <div class="row justify-content-around">
+        <img
+          [src]="game.background_image"
+          class="mb-5 col-12 col-md-5 imag"
+          alt=""
+        />
+        <img
+          [src]="game.background_image_additional"
+          class="mb-5 col-12 col-md-5 imag"
+          alt=""
+        />
+      </div>
+      <div class="price text-light mb-3">{{ game.price }} $</div>
+      <div>
+        <button class="addToCart p-4 mb-4" (click)="addToCart(game)">
+          add to cart
+        </button>
+        <div class="alert alert-warning" [style.display]="alert ? 'block' : 'none'">
+          Please Login
+        </div>
+        <div class="alert alert-success" [style.display]="added ? 'block' : 'none'">
+          Game Added To Cart
+        </div>
+      </div>
+
+      <div class="rating">
+        @if (game.ratings.length > 0) {
+        <h2 class="text-light mt-4">Rating :</h2>
+        } @for (rate of game.ratings; track $index) {
+        <div class="row m-2 align-items-center">
+          <div
+            class="rate {{ rate.title }} col-11"
+            [style.width.px]="rate.percent * 6"
+            title="{{ rate.title }}"
+          ></div>
+          <p class="col text-light mt-3">
+            {{ rate.count }}
+          </p>
+        </div>
+        }
+        <div class="row justify-content-between">
+          @for (rate of game.ratings; track $index) {
+          <div class="col">
+            <div
+              style="
+                max-width: 11px;
+                max-height: 10px;
+                padding: 0;
+                margin-top: 5px;
+                border-radius: 50px;
+              "
+              class=" {{ rate.title }}"
+            ></div>
+            <h5 class="text-light m-2">{{ rate.title }}</h5>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

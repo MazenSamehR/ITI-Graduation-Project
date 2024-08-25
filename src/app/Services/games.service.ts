@@ -14,7 +14,7 @@ export interface GamesApiResponse {
   results: Game[];
   // Add other properties if needed, like 'count', 'next', 'previous', etc.
 }
-  
+
 @Injectable({
   providedIn: 'root',
 })
@@ -25,21 +25,15 @@ export class GamesService {
 
   constructor(private http: HttpClient) {}
 
-  getAllGames(): Observable<GamesApiResponse> {
-    return this.http.get<GamesApiResponse>(
-      `https://api.rawg.io/api/games?key=${this.apiKey}`
-    );
+  getAllGames(): Observable<any> {
+    return this.http.get<GamesApiResponse>(`http://localhost:8008/games`);
   }
 
-  searchGames(query: string): Observable<GamesApiResponse> {
-    return this.http
-      .get<GamesApiResponse>(
-        `https://api.rawg.io/api/games?key=${this.apiKey}&search=${query}`
-      )
-      .pipe(
-        tap((data) => {
-          this.searchResultsSource.next(data.results); // Update the search results
-        })
-      );
+  searchGames(query: string): Observable<any> {
+    return this.http.get<any>(`http://localhost:8008/games`).pipe(
+      tap((data) => {
+        this.searchResultsSource.next(data.results); // Update the search results
+      })
+    );
   }
 }

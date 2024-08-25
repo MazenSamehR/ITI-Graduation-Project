@@ -1,4 +1,8 @@
 /* While Hovering */
+.container-fluid{
+    background-color: rgb(15, 15, 15);
+}
+
 .cardDiv {
     border: 3px solid rgb(187, 237, 217);;
     border-radius: 13px;
@@ -13,3 +17,41 @@
     border-radius: 30px;
     transform: scale(1.1); 
 }
+.card{
+    transition: 0.5s;
+}
+.card:hover{
+    transform: scale(1.04);
+    transition: all 0.5s;
+}
+a{
+    text-decoration: none;
+}
+.rowPlatform{
+    /* padding: 0px 10px 0px 10px; */
+}
+.platformImg{
+    max-width: 25px;
+    max-height: 25px;
+    transition: all 0.5s;
+}
+.col-3{
+    padding: 0px;
+    margin: 0px 10px 0px 10px;
+}
+
+/* .hide{
+    opacity: 0;
+    font-size: 18px;
+    color: rgb(35, 40, 43);
+    transition: all 0.5s;
+} */
+/* .platformImg:hover{
+    transform: scale(1.1);
+} */
+/* .platformImg:hover + .hide{
+    opacity: 1;
+    color: rgb(226, 226, 226);
+    margin-top: 10px;
+    transition: all 0.5s;
+} */

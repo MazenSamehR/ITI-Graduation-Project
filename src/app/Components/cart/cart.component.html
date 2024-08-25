@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <div class="row justify-content-around">
+    <div class="col-lg-8 col-12">
+      @for (game of games; track $index) {
+      <div class="row justify-content-between item">
+        <div class="col-3">
+          <img [src]="game.image" alt="" class="gameImg" />
+        </div>
+        <div class="col-8">
+          <a [routerLink]="['/details/', game.id]">
+            <p class="text-light gameName" title="show details">
+              {{ game.name }}
+            </p>
+          </a>
+          <h5 class="text-light">
+            price : <b class="text-success">{{ game.price }} $</b>
+          </h5>
+        </div>
+        <div class="col-1 align-self-center" (click)="deleteGame(game)">
+          <img src="./imgs/delete.png" alt="" class="delete" />
+          <!-- <p class="deleteMsg">Delete</p> -->
+        </div>
+      </div>
+
+      }@empty {
+      <h2 class="text-light">No Games In Your Cart</h2>
+      <a routerLink="/games">
+        <div class="btn btn-outline-primary">all games</div>
+      </a>
+      }
+    </div>
+    <div class="col-lg-3 col-8">
+      @if (games.length > 0) {
+      <div class="total">
+        <h3>{{ totalPrice }} $</h3>
+        <button class="confirmbtn">Proceed to checkout</button>
+      </div>
+      }
+    </div>
+  </div>
+</div>

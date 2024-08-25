@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GamesService } from '../../Services/games.service';
-import { DatePipe, UpperCasePipe } from '@angular/common';
-import { RouterLink } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { DatePipe, UpperCasePipe, CommonModule } from '@angular/common';
+import { NavbarComponent } from '../navbar/navbar.component';
+import { RouterModule, RouterLink } from '@angular/router';
 
 interface Platform {
   id: number;
@@ -13,30 +13,57 @@ interface Platform {
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule, DatePipe, UpperCasePipe, RouterLink],
+
+  imports: [
+    DatePipe,
+    UpperCasePipe,
+    NavbarComponent,
+    RouterModule,
+    CommonModule,
+    RouterLink,
+  ],
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css'],
+  styleUrl: './product-list.component.css',
 })
 export class ProductListComponent implements OnInit {
-  filteredGames: any[] = [];
+  allGames: any[] = [];
+  filteredGames!: any;
   selectedOrder: string = 'relevance';
   selectedPlatform: string = '';
 
+  PC: string = './imgs/desktop.png';
+  PlayStation: string = './imgs/playstation.png';
+  Xbox: string = './imgs/game.png';
+  IOS: string = './imgs/apple2.png';
+  Android: string = './imgs/android.png';
+  Nintendo: string = './imgs/nintendo-switch (1).png';
+  Linux: string = './imgs/linux.png';
+  Web: string = './imgs/web.png';
+  AppleMachine: string = './imgs/macintosh.png';
+
   constructor(private gamesService: GamesService) {}
 
+  userName: string | null = localStorage.getItem('userName');
+  userId: string | null = localStorage.getItem('userId');
+
   ngOnInit(): void {
-    this.gamesService.searchResults$.subscribe((games) => {
-      this.filteredGames = this.applyFilters(games);
-      console.log(games);
+    this.gamesService.getAllGames().subscribe((res) => {
+      this.allGames = res.data;
+      console.log(res);
     });
 
+    this.gamesService.searchResults$.subscribe((games) => {
+      this.filteredGames = games;
+      console.log(' from list');
+      console.log(this.filteredGames);
+    });
     this.loadGames();
   }
 
   loadGames(): void {
     this.gamesService.getAllGames().subscribe((res) => {
-      console.log(res.results);
-      this.filteredGames = this.applyFilters(res.results); // Apply filters after fetching all games
+      console.log(res);
+      this.filteredGames = this.applyFilters(res); // Apply filters after fetching all games
     });
   }
 
@@ -51,20 +78,25 @@ export class ProductListComponent implements OnInit {
       );
     } else if (this.selectedOrder === 'player_count') {
       filtered = filtered.sort((a, b) => b.playtime - a.playtime); // Assuming 'playtime' indicates player count
+    } else {
+      filtered = this.allGames;
     }
 
     // Apply platform filter
-    // if (this.selectedPlatform) {
-      
-    //   const selectedPlatformLower = this.selectedPlatform.toLowerCase();
-    //   filtered = filtered.filter((game) =>
-    //     game.platforms.some(
-    //       (p: { platform: { name: string; slug: string } }) =>
-    //         p.platform.name.toLowerCase().includes(selectedPlatformLower) ||
-    //         p.platform.slug.toLowerCase().includes(selectedPlatformLower)
-    //     )
-    //   );
-    // }
+    if (this.selectedPlatform) {
+      console.log(this.selectedPlatform);
+      const selectedPlatformLower = this.selectedPlatform.toLowerCase();
+      filtered = filtered.filter((game) =>
+        game.platforms.some(
+          (p: { platform: { name: string; slug: string } }) =>
+            p.platform.name.toLowerCase().includes(selectedPlatformLower) ||
+            p.platform.slug.toLowerCase().includes(selectedPlatformLower)
+        )
+      );
+    } else {
+      filtered = this.allGames;
+    }
+    console.log(filtered);
     return filtered;
   }
 
@@ -81,6 +113,9 @@ export class ProductListComponent implements OnInit {
 
   onPlatformChange(platform: string): void {
     this.selectedPlatform = platform;
-    this.filteredGames = this.applyFilters(this.filteredGames);
+    this.gamesService.getAllGames().subscribe((res) => {
+      this.allGames = res.data;
+    });
+    this.filteredGames = this.applyFilters(this.allGames);
   }
 }

@@ -1,33 +1,87 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary-mod navbar-dark bg-black">
   <div class="container-fluid">
     <a class="navbar-brand text-white" routerLink="/">GX</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+    <div
+      class="collapse navbar-collapse justify-content-between"
+      id="navbarSupportedContent"
+    >
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link text-white" routerLink="/products">Products</a>
+          <a class="nav-link text-white" routerLink="/games">Games</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a
+            class="nav-link dropdown-toggle text-white"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
             My Library
           </a>
           <ul class="dropdown-menu bg-dark border-white">
             <li><a class="dropdown-item text-white" href="#">Action</a></li>
-            <li><a class="dropdown-item text-white" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider border-white"></li>
-            <li><a class="dropdown-item text-white" href="#">Something else here</a></li>
+            <li>
+              <a class="dropdown-item text-white" href="#">Another action</a>
+            </li>
+            <li><hr class="dropdown-divider border-white" /></li>
+            <li>
+              <a class="dropdown-item text-white" href="#"
+                >Something else here</a
+              >
+            </li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <a
+            class="nav-link text-white"
+            routerLink="/cart"
+            tabindex="-1"
+            aria-disabled="true"
+            >Cart</a
+          >
         </li>
       </ul>
+
       <form class="d-flex mx-auto w-50" (ngSubmit)="onSearch()" role="search">
-        <input class="form-control me-2 searchBar bg-dark border-0" type="search" [(ngModel)]="searchQuery" name="search" placeholder="Search" aria-label="Search">
+        <input
+          class="form-control me-2 searchBar bg-dark border-0"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          [(ngModel)]="searchQuery" name="search"
+        />
+
+
         <button class="btn bg-dark text-white" type="submit">Search</button>
       </form>
+      @if (userId?.length) {
+      <div class="userName" (click)="showLogout()">{{ userName }}</div>
+      <div
+        class="btn btn-danger hide"
+        [style.display]="hide ? 'none' : 'block'"
+        [style.opacity]="hide ? '0' : '1'"
+        (click)="logout()"
+      >
+        Logout
+      </div>
+      }@else {
+      <div class="btn btn-primary mx-2" routerLink="/login">Login</div>
+      <div class="btn btn-outline-primary mx-2" routerLink="/signup">
+        Register
+      </div>
+      }
     </div>
   </div>
 </nav>

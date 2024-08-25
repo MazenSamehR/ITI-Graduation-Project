@@ -1,0 +1,126 @@
+.container-fluid{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url(/imgs/no-man-s-sky-4k-gaming-9cw5c1q7y6z57mgy.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-image: linear-gradient(to left bottom ,rgb(94, 24, 199)  ,rgb(44, 173, 150)  ); */
+}
+#blur{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 450px;
+    height: 600px;
+    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    box-shadow: 0px 0px 50px  black;
+}
+label{
+    font-size: 30px;
+    color: rgb(23, 23, 23);
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+#form{
+    text-align: center;
+}
+input{
+    background-color: rgba(30, 153, 198, 0.1);
+    color: rgb(0, 0, 0);
+    margin:10px 0 10px 0;
+    width: 285px;
+    height: 40px;
+    padding-left: 15px;
+    border: 2px solid rgba(66, 66, 66, 0.374);
+    border-radius: 15px;
+    transition: 0.5s;
+}
+input:hover{
+    box-shadow:  0px 0px 8px 1px rgb(78, 78, 78);
+}
+input:focus{
+    box-shadow: 0px 0px 40px rgba(102, 102, 102, 0.808);
+    background-color: rgba(255, 255, 255, 0.531);
+    transform: scale(1.05);
+    border-radius: 20px ;
+    outline: none;
+}
+
+#btnSign{
+    /* padding: 10px; */
+    margin-top: 10px;
+    width: 80%;
+    height: 40px;
+    font-size: 15px;
+    border: none;
+    /* border: 1px solid rgba(101, 101, 101, 0.478); */
+    border-radius: 10px;
+    background-color: rgb(92, 100, 255);
+    font-weight: bold;
+    color:rgb(255, 255, 255) ;
+    /* box-shadow: inset 1.5px 1.5px 4px rgb(212, 212, 212),-3px -3px 10px rgb(87, 87, 87),inset -1.5px -1.5px 4px  rgba(35, 35, 35, 0.73),3px 3px 10px black; */
+    /* background-image: linear-gradient(to top left, rgba(255, 255, 255, 0.9) 0.5%,rgba(96, 96, 96, 0.3)); */
+    /* box-shadow: 7px 4px 15px 5px black; */
+    transition: 0.5s;
+
+}
+#btnSign:hover{
+    border-radius: 15px;
+    color: rgb(4, 37, 80);
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0px 0px 15px 5px rgb(63, 63, 63);
+    transform: scale(1.07);
+}
+#btnSign:active{
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.854);
+    box-shadow: 0px 0px 15px 5px rgb(206, 206, 206);
+    transform: scale(1);
+    transition: 0s;
+}
+
+
+#btnLogin{
+    /* padding: 10px; */
+    margin-top: 10px;
+    width: 80%;
+    height: 40px;
+    font-size: 15px;
+    border: none;
+    /* border: 1px solid rgba(101, 101, 101, 0.478); */
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    font-weight: bold;
+    color:rgb(92, 100, 255) ;
+    /* box-shadow: inset 1.5px 1.5px 4px rgb(212, 212, 212),-3px -3px 10px rgb(87, 87, 87),inset -1.5px -1.5px 4px  rgba(35, 35, 35, 0.73),3px 3px 10px black; */
+    /* background-image: linear-gradient(to top left, rgba(255, 255, 255, 0.9) 0.5%,rgba(96, 96, 96, 0.3)); */
+    /* box-shadow: 7px 4px 15px 5px black; */
+    transition: 0.5s;
+
+}
+#btnLogin:hover{
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(92, 100, 255, 0.598);
+    box-shadow: 0px 0px 15px 5px rgb(63, 63, 63);
+    transform: scale(1.07);
+}
+#btnLogin:active{
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.854);
+    box-shadow: 0px 0px 15px 5px rgb(206, 206, 206);
+    transform: scale(1);
+    transition: 0s;
+}
+
+
+
