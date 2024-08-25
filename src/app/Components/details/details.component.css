@@ -1,0 +1,194 @@
+.container-fluid{
+    background-color: rgb(15, 15, 15);
+    min-height: 100vh;
+}
+h1{
+    font-size: 5.5rem;
+    font-family: fantasy;
+}
+.price{
+    font-size: 30px;
+}
+.addToCart{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(36, 36, 36);
+    border: none;
+    border-radius: 20px;
+    transition: all 0.2s;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+.addToCart:hover{
+    background-color: rgb(253, 227, 168);
+    color: rgb(45, 45, 45);
+}
+.addToCart:active{
+    color:rgb(255, 255, 255);
+    transition: 0s;
+}
+.imag{
+    padding: 0px;
+    box-shadow: 0px 2px 15px  rgb(0, 0, 0);
+    border-radius: 20px;
+    transition: all 0.5s;
+}
+.imag:hover{
+    transform: scale(1.1);
+}
+
+.platform{
+    text-align: center;
+}
+.rowPlatform{
+    border-radius: 15px;
+    /* background-color: rgb(42, 55, 61); */
+    background-color: rgb(35, 40, 43);
+    padding: 20px;
+    box-shadow: 0px 0px 5px black;
+    transition: all 0.5s;
+}
+.platformImg{
+    max-width: 50px;
+    max-height: 50px;
+    transition: all 0.5s;
+}
+.hide{
+    opacity: 0;
+    font-size: 18px;
+    color: rgb(35, 40, 43);
+    transition: all 0.5s;
+}
+.platformImg:hover{
+    transform: scale(1.1);
+}
+.platformImg:hover + .hide{
+    opacity: 1;
+    color: rgb(226, 226, 226);
+    margin-top: 10px;
+    transition: all 0.5s;
+}
+/* 
+.PC{
+    margin: 8px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(146, 203, 150);
+    color: rgb(37, 37, 37);
+    box-shadow:0px 0px 10px rgb(146, 203, 150);
+}
+.PlayStation{
+    margin: 8px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(54, 102, 207);
+    color: white;
+    box-shadow:0px 0px 10px rgb(54, 102, 207);
+}
+.Xbox{
+    margin: 8px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(52, 115, 45);
+    color: white;
+    box-shadow:0px 0px 10px rgb(52, 115, 45);
+}
+.Apple {
+    margin: 8px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(46, 46, 46);
+    box-shadow:0px 0px 10px rgb(255, 255, 255);
+}
+.Linux{
+    margin: 8px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    box-shadow:0px 0px 10px rgb(0, 0, 0);
+}
+.Nintendo{
+    margin: 8px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(190, 41, 41);
+    color: rgb(255, 255, 255);
+    box-shadow:0px 0px 10px rgb(190, 41, 41);
+}
+.Web{
+    margin: 8px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(170, 132, 105);
+    color: white;
+    box-shadow:0px 0px 10px rgb(170, 132, 105);
+}
+.Android{
+    margin: 8px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(39, 180, 0);
+    box-shadow:0px 0px 10px rgb(255, 255, 255);
+}
+.iOS{
+    margin: 8px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    box-shadow:0px 0px 10px rgb(255, 255, 255);
+} */
+.recommended{
+    background-color: rgb(112, 237, 100);
+    color: rgb(112, 237, 100);
+    border-radius: 12px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+.meh{
+    background-color: rgb(240, 231, 100);
+    color: rgb(240, 231, 100);
+    border-radius: 12px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+.exceptional{
+    background-color: rgb(109, 127, 232);
+    color: rgb(109, 127, 232);
+    border-radius: 12px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s;
+}
+.skip{
+    background-color: rgb(215, 38, 38);
+    color: rgb(215, 38, 38);
+    border-radius: 12px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s;
+}
+/* 
+svg{
+    background-color: rgb(255, 255, 255);
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    border-radius: 15px;
+} */
+
+.alert{
+    transition: all 0.5s;
+}

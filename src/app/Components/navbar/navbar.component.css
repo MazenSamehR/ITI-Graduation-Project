@@ -4,7 +4,11 @@
     padding-top: 10px; /* Increase the padding on the top */
     padding-bottom: 10px; /* Increase the padding on the bottom */
 }
-
+.navbar-brand{
+    font-size: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 .bg-body-tertiary-mod {
     --bs-bg-opacity: 1;
     /* background-color: rgba(var(--bs-tertiary-bg-rgb), var(--bs-bg-opacity)) !important; */
@@ -26,3 +30,29 @@
 }
 
 
+.searchBar:focus {
+    background-color: white;
+    color: black;
+}
+
+.searchBar:hover::placeholder {
+    color: black;
+    opacity: 1; 
+}
+.userName{
+    color: rgb(81, 125, 227);
+    font-size: 20px;
+    margin: 5px 10px 5px 10px;
+    transition: all 0.5s;
+}
+.hide{
+    transition: all 0.5s;
+}
+.userName:hover{
+    cursor: pointer;
+    color: rgb(10, 70, 209);
+    transition: 0.2s;
+}
+
+
+/* While HOVERING */

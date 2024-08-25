@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
 })
@@ -33,5 +34,9 @@ export class LandingComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  explore() {
+    localStorage.clear();
+  }
+
+  ngOnInit() {}
 }

@@ -1,0 +1,33 @@
+<div class="container-fluid">
+ 
+  <div id="blur">
+    
+    <div id="form">
+      <form #user="ngForm" (ngSubmit)="login(user.value)">
+        <label for="">Email</label><br />
+        <input
+          type="text"
+          placeholder="Email..."
+          id="user"
+          name="email"
+          ngModel
+        /><br /><br />
+        <label for="">Password</label><br />
+        <input
+          type="password"
+          placeholder="Password..."
+          id="pass"
+          name="password"
+          ngModel
+        /><br /><br />
+        <input type="submit" id="btnLogin" value="Login" />
+        <input
+          type="submit"
+          id="btnSign"
+          routerLink="/signup"
+          value="Register"
+        /><br />
+      </form>
+    </div>
+  </div>
+</div>

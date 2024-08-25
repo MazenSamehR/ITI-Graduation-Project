@@ -11,13 +11,16 @@
           ensuring every player finds their next adventure. Explore our
           collection and level up your gaming experience!
         </p>
-        <div class="mt-4">
+        <div class="mt-4 row">
           <a
-            href="/products"
-            style="padding: 0.5em 2.5em"
+            routerLink="/games"
             class="btn explore-button btn-dark btn-lg"
+            (click)="explore()"
             >Explore</a
           >
+          <!-- <a routerLink="/signup" class="btn btn-outline-dark btn-lg col m-3"
+            >Register</a
+          > -->
         </div>
       </div>
 
