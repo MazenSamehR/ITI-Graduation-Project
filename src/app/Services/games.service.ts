@@ -20,7 +20,7 @@ export interface GamesApiResponse {
 })
 export class GamesService {
   apiKey = '8a407f442a9749e1853ec8449e8b8991';
-  private searchResultsSource = new BehaviorSubject<Game[]>([]);
+  private searchResultsSource = new BehaviorSubject([]);
   searchResults$ = this.searchResultsSource.asObservable();
 
   constructor(private http: HttpClient) {}
@@ -30,10 +30,12 @@ export class GamesService {
   }
 
   searchGames(query: string): Observable<any> {
-    return this.http.get<any>(`http://localhost:8008/games`).pipe(
-      tap((data) => {
-        this.searchResultsSource.next(data.results); // Update the search results
-      })
-    );
+    return this.http
+      .get<any>(`http://localhost:8008/searchgames?name=${query}`)
+      .pipe(
+        tap((data) => {
+          this.searchResultsSource.next(data); // Update the search results
+        })
+      );
   }
 }

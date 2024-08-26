@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { GamesService } from '../../Services/games.service';
 import { DatePipe, UpperCasePipe, CommonModule } from '@angular/common';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { RouterModule, RouterLink } from '@angular/router';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 interface Platform {
   id: number;
@@ -46,19 +47,26 @@ export class ProductListComponent implements OnInit {
   userName: string | null = localStorage.getItem('userName');
   userId: string | null = localStorage.getItem('userId');
 
-  ngOnInit(): void {
+  ngOnInit(): any {
     this.gamesService.getAllGames().subscribe((res) => {
       this.allGames = res.data;
-      console.log(res);
+      // console.log(res);
     });
-
     this.gamesService.searchResults$.subscribe((games) => {
       this.filteredGames = games;
-      console.log(' from list');
-      console.log(this.filteredGames);
+      console.log('from list');
+      console.log(games);
     });
     this.loadGames();
+
+    // this.gamesService.searchResults$.subscribe((games) => {
+    //   this.filteredGames = this.applyFilters(games);
+    //   console.log('from list');
+    //   console.log(games);
+    // });
+    // this.loadGames();
   }
+
 
   loadGames(): void {
     this.gamesService.getAllGames().subscribe((res) => {
@@ -96,7 +104,7 @@ export class ProductListComponent implements OnInit {
     } else {
       filtered = this.allGames;
     }
-    console.log(filtered);
+    // console.log(filtered);
     return filtered;
   }
 

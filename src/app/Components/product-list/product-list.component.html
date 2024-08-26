@@ -99,11 +99,11 @@
             class="dropdown-menu dropdown-menu-dark"
             aria-labelledby="platformDropdown"
           >
-          <li>
-            <button class="dropdown-item" (click)="onPlatformChange('')">
-              All
-            </button>
-          </li>
+            <li>
+              <button class="dropdown-item" (click)="onPlatformChange('')">
+                All
+              </button>
+            </li>
             <li>
               <button class="dropdown-item" (click)="onPlatformChange('PC')">
                 PC
@@ -131,19 +131,13 @@
               </button>
             </li>
             <li>
-              <button
-                class="dropdown-item"
-                (click)="onPlatformChange('IOS')"
-              >
+              <button class="dropdown-item" (click)="onPlatformChange('IOS')">
                 IOS
               </button>
             </li>
             <li>
-              <button
-                class="dropdown-item"
-                (click)="onPlatformChange('Linux')"
-              >
-              Linux
+              <button class="dropdown-item" (click)="onPlatformChange('Linux')">
+                Linux
               </button>
             </li>
           </ul>
@@ -154,7 +148,7 @@
         <!-- Product List -->
         <div
           *ngFor="let game of filteredGames"
-          class="col-6 col-md-4 mb-4 d-flex"
+          class="col-12 col-md-6 col-lg-4 mb-4 d-flex"
         >
           <div
             style="
@@ -177,42 +171,42 @@
                   <div class="row justify-content-start rowPlatform">
                     @for (it of game.parent_platforms; track $index) {
                     @if(it.platform.name== 'PC') {
-                    <div class="col-4 col-sm-1 m-1 platform">
+                    <div class="col-1 m-1 platform">
                       <img [src]="PC" alt="" class="platformImg" />
                       <!-- <h4 class="hide">PC</h4> -->
                     </div>
                     }@else if (it.platform.name == 'PlayStation') {
-                    <div class="col-4 col-sm-1 m-1 platform">
+                    <div class="col-1 m-1 platform">
                       <img [src]="PlayStation" alt="" class="platformImg" />
                       <!-- <h4 class="hide">PlayStation</h4> -->
                     </div>
                     }@else if (it.platform.name == 'Linux') {
-                    <div class="col-4 col-sm-1 m-1 platform">
+                    <div class="col-1 m-1 platform">
                       <img [src]="Linux" alt="" class="platformImg" />
                       <!-- <h4 class="hide">Linux</h4> -->
                     </div>
                     }@else if (it.platform.name =='iOS') {
-                    <div class="col-4 col-sm-1 m-1 platform">
+                    <div class="col-1 m-1 platform">
                       <img [src]="IOS" alt="" class="platformImg" />
                       <!-- <h4 class="hide">ios</h4> -->
                     </div>
                     }@else if (it.platform.name == 'Nintendo') {
-                    <div class="col-4 col-sm-1 m-1 platform">
+                    <div class="col-1 m-1 platform">
                       <img [src]="Nintendo" alt="" class="platformImg" />
                       <!-- <h4 class="hide">Nintendo</h4> -->
                     </div>
                     }@else if(it.platform.name == 'Android') {
-                    <div class="col-4 col-sm-1 m-1 platform">
+                    <div class="col-1 m-1 platform">
                       <img [src]="Android" alt="" class="platformImg" />
                       <!-- <h4 class="hide">Android</h4> -->
                     </div>
                     }@else if (it.platform.name == 'Xbox'){
-                    <div class="col-4 col-sm-1 m-1 platform">
+                    <div class="col-1 m-1 platform">
                       <img [src]="Xbox" alt="" class="platformImg" />
                       <!-- <h4 class="hide">Xbox</h4> -->
                     </div>
                     } @else if(it.platform.name == 'Web'){
-                    <div class="col-4 col-sm-1 m-1 platform">
+                    <div class="col-1 m-1 platform">
                       <img [src]="Web" alt="" class="platformImg" />
                       <!-- <h4 class="hide">Web</h4> -->
                     </div>

@@ -23,38 +23,39 @@ export class NavbarComponent implements OnInit {
   hide: boolean = true;
 
   searchRes!: any[];
-  onSearch(): any {
-    this.searchRes = [];
+  onSearch(): void {
+    // this.searchRes = [];
     this.gamesService.searchGames(this.searchQuery).subscribe((res) => {
+      console.log('from navbar'); // Handle the search results here
       console.log(res); // Handle the search results here
       console.log('search : ' + this.searchQuery);
 
-      let serachStr = this.searchQuery.toLowerCase();
+      // let serachStr = this.searchQuery.toLowerCase();
 
-      for (let i in res.data) {
-        let compare = res.data[i].name.toLowerCase();
-        if (serachStr == compare) {
-          console.log(serachStr);
-          console.log(' == ' + compare);
-          this.searchRes[0] = res.data[i];
-          console.log(this.searchRes); // Handle the search results here
-          return this.searchRes;
-        }
-        for (let j in res.data.alternative_names) {
-          let compare = res.data.alternative_names.toLowerCase();
+      // for (let i in res.data) {
+      //   let compare = res.data[i].name.toLowerCase();
+      //   if (serachStr == compare) {
+      //     console.log(serachStr);
+      //     console.log(' == ' + compare);
+      //     this.searchRes[0] = res.data[i];
+      //     console.log(this.searchRes); // Handle the search results here
+      //     return this.searchRes;
+      //   }
+      //   for (let j in res.data.alternative_names) {
+      //     let compare = res.data.alternative_names.toLowerCase();
 
-          if (compare == serachStr) {
-            console.log(serachStr);
-            console.log(' == ' + compare);
-            this.searchRes[0] = res.data[j];
-            console.log(this.searchRes); // Handle the search results here
-            return this.searchRes;
-          }
-        }
-      }
-      console.log('from navbar'); // Handle the search results here
-      console.log(this.searchRes); // Handle the search results here
-      return this.searchRes;
+      //     if (compare == serachStr) {
+      //       console.log(serachStr);
+      //       console.log(' == ' + compare);
+      //       this.searchRes[0] = res.data[j];
+      //       console.log(this.searchRes); // Handle the search results here
+      //       return this.searchRes;
+      //     }
+      //   }
+      // }
+      // console.log('from navbar'); // Handle the search results here
+      // console.log(this.searchRes); // Handle the search results here
+      // return this.searchRes;
     });
   }
 
