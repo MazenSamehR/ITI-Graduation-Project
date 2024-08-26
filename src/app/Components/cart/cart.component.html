@@ -4,8 +4,8 @@
     <div class="col-lg-8 col-12">
       @for (game of games; track $index) {
       <div class="row lg:justify-content-between justify-content-center item">
-        <div class="col-12 col-md-3">
-          <img [src]="game.image" alt="" class="gameImg" />
+        <div class="col-12 col-md-3 d-flex">
+          <img [src]="game.image" alt="" class="gameImg rounded-5" />
         </div>
         <div class="col-12 col-md-8">
           <a [routerLink]="['/details/', game.id]">
