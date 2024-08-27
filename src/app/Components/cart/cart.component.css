@@ -48,6 +48,7 @@ a {
   text-decoration: none;
 }
 .total {
+  justify-content: center;
   text-align: center;
   color: rgb(73, 216, 54);
   /* background-color: rgb(47, 66, 76); */
