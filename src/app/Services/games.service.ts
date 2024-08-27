@@ -26,12 +26,12 @@ export class GamesService {
   constructor(private http: HttpClient) {}
 
   getAllGames(): Observable<any> {
-    return this.http.get<GamesApiResponse>(`http://localhost:8008/games`);
+    return this.http.get<GamesApiResponse>(`https://backend-c0jl0hova-marko-samis-projects.vercel.app/games`);
   }
 
   searchGames(query: string): Observable<any> {
     return this.http
-      .get<any>(`http://localhost:8008/searchgames?name=${query}`)
+      .get<any>(`https://backend-c0jl0hova-marko-samis-projects.vercel.app/searchgames?name=${query}`)
       .pipe(
         tap((data) => {
           this.searchResultsSource.next(data); // Update the search results

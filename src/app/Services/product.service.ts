@@ -11,6 +11,6 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   getDetails(id: number): Observable<any> {
-    return this.http.get<any>(`http://localhost:8008/games/${id}`);
+    return this.http.get<any>(`https://backend-c0jl0hova-marko-samis-projects.vercel.app/games/${id}`);
   }
 }

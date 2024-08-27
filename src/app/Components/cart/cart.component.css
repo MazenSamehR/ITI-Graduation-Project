@@ -1,80 +1,85 @@
-.container-fluid{
-    background-color: rgb(15, 15, 15);
-    min-height: 100vh;
-    padding: 40px;
+.container-fluid {
+  background-color: rgb(15, 15, 15);
+  min-height: 100vh;
+  padding: 40px;
 }
-.item{
-    background-color: rgb(33, 33, 33);
-    margin: 30px;
-    padding: 20px ;
-    border: 2px solid black;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px black;
-    transition: all 0.5s;
-
+.item {
+  background-color: rgb(33, 33, 33);
+  margin: 30px;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px black;
+  transition: all 0.5s;
 }
-.gameImg{
-    width: 100%;
+.gameImg {
+  width: 100%;
 }
-.delete{
-    min-width: 40px;
-    max-width: 50px;
-    width: 100%;
-    transition: all 0.5s;
+.delete {
+  min-width: 40px;
+  max-width: 50px;
+  width: 100%;
+  transition: all 0.5s;
 }
-.delete:hover{
-    transform: scale(1.1);
-    cursor: pointer;
+.delete:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
-.deleteMsg{
-    /* opacity: 0; */
-    display: none;
-    font-size: 15px;
-    color: rgb(35, 40, 43);
-    transition: all 0.5s;
+.deleteMsg {
+  /* opacity: 0; */
+  display: none;
+  font-size: 15px;
+  color: rgb(35, 40, 43);
+  transition: all 0.5s;
 }
-.delete:hover + .deleteMsg{
-    /* opacity: 1 */
-    display: block;
-    padding: 5px;
-    border-radius: 15px;
-    color: rgb(216, 57, 57);
-    margin: 10px;
-    transition: all 0.5s;
+.delete:hover + .deleteMsg {
+  /* opacity: 1 */
+  display: block;
+  padding: 5px;
+  border-radius: 15px;
+  color: rgb(216, 57, 57);
+  margin: 10px;
+  transition: all 0.5s;
 }
-.col-1{
-    text-align: center;
+.col-1 {
+  text-align: center;
 }
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
-.total{
-    text-align: center;
-    color: rgb(73, 216, 54);
-    background-color: rgb(47, 66, 76);
-    margin: 30px;
-    padding: 20px;
-    border: 2px solid black;
-    border-radius: 15px;
-    box-shadow: 0px 0px 10px black;
+.total {
+  text-align: center;
+  color: rgb(73, 216, 54);
+  /* background-color: rgb(47, 66, 76); */
+  background-color: #2e2e2e;
+  margin: 30px;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px black;
 }
-.confirmbtn{
-    border: none;
-    background-color: rgb(237, 168, 9);
-    padding: 10px;
-    margin: 10px;
-    border-radius: 10px;
-    transition: all 0.3s;
+.confirmbtn {
+  border: none;
+  /* background-color: rgb(237, 168, 9); */
+  background-color: #ffa500;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  font-size: large;
+  margin: 10px;
+  border-radius: 10px;
+  transition: all 0.3s;
 }
-.confirmbtn:hover{
-    transform: scale(1.05);
-    background-color: rgb(240, 187, 64);
+.confirmbtn:hover {
+  transform: scale(1.05);
+  /* background-color: rgb(240, 187, 64); */
+  background-color: #ff8c00;
 }
-.confirmbtn:active{
-    color:rgb(190, 190, 190);
-    transition: 0s;
+.confirmbtn:active {
+  color: rgb(190, 190, 190);
+  transition: 0s;
 }
-.gameName{
-    font-family: system-ui, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 43px;
+.gameName {
+  font-family: system-ui, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 43px;
 }
