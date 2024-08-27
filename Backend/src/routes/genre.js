@@ -20,8 +20,26 @@ router.get("/genres", (req, res) => {
     });
 });
 
+// router.get("/genres/:genreId/games", (req, res) => {
+//   const genreId = req.params.genreId;
+//   Genre.findById(genreId)
+//     .populate("games")
+//     .then((genre) => {
+//       res.json({
+//         status: "SUCCESS",
+//         message: "Games fetched successfully",
+//         data: genre.games,
+//       });
+//     })
+//     .catch((err) => {
+//       res.json({ status: "FAILED", message: "Error in fetching games" });
+//     });
+// });
+
 router.get("/genres/:genreId/games", (req, res) => {
   const genreId = req.params.genreId;
+  console.log(genreId);
+
   Genre.findById(genreId)
     .populate("games")
     .then((genre) => {
@@ -31,25 +49,7 @@ router.get("/genres/:genreId/games", (req, res) => {
         data: genre.games,
       });
     })
-    .catch((err) => {
-      res.json({ status: "FAILED", message: "Error in fetching games" });
-    });
-});
-    
-router.get("/genres/:genreId/games", (req, res) => {
-  const genreId = req.params.genreId;
-    console.log(genreId);
-    
-  Genre.findById(genreId)
-    .populate("games")
-    .then((genre) => {
-      res.json({
-        status: "SUCCESS",
-        message: "Games fetched successfully",
-        data: genre.games,
-      });
-    })
-    .catch((err) => {
+    .catch(() => {
       res.json({ status: "FAILED", message: "Error in fetching games" });
     });
 });
